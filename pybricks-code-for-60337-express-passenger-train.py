@@ -15,34 +15,34 @@ def check_for_color(color):
         wait(check_color_interval_ms)
 
 while True:
-    print("looking for green")
-    check_for_color(Color.GREEN)
+    print("looking for yellow")
+    check_for_color(Color.YELLOW)
 
-    print("green detected, at station, stopping and continuing")
+    print("yellow detected, at station, stopping and continuing")
     motor.brake()
     wait(station_stop_time_ms)
     motor.dc(forward_speed)
 
-    print("looking for yellow")
-    check_for_color(Color.YELLOW)
+    print("looking for red")
+    check_for_color(Color.RED)
 
-    print("yellow detected, at end of line, stopping and going back to station")
+    print("RED detected, at end of line, stopping and going back to station")
     motor.brake()
     wait(eol_stop_time_ms)
     motor.dc(-forward_speed)
 
-    print("looking for green")
-    check_for_color(Color.GREEN)
+    print("looking for yellow")
+    check_for_color(Color.YELLOW)
 
-    print("green detected, at station, stopping and continuing")
+    print("yellow detected, at station, stopping and continuing")
     motor.brake()
     wait(station_stop_time_ms)
     motor.dc(-forward_speed)
 
-    print("looking for red")
-    check_for_color(Color.RED)
+    print("looking for blue")
+    check_for_color(Color.BLUE)
 
-    print("red detected, at end of line, stopping and going back to station")
+    print("blue detected, at end of line, stopping and going back to station")
     motor.brake()
     wait(eol_stop_time_ms)
     motor.dc(forward_speed)
